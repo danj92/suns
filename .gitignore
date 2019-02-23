@@ -1,0 +1,7 @@
+# IDEs
+.vscode
+
+# Generated stuff
+venv
+
+.mypy_cache
