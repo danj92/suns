@@ -4,10 +4,14 @@ from . import models
 
 
 class FriendSerializer(serializers.ModelSerializer):
+    # remembering the logged-in user as the owner
+    owner = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
 
     class Meta:
         model = models.Friend
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'owner')
 
 
 class BelongingSerializer(serializers.ModelSerializer):
